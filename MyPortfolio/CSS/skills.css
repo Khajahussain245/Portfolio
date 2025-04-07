@@ -1,0 +1,113 @@
+@import url(common.css);
+
+.section{
+    width: 600px;
+    height: 450px;
+    /* border: 2px solid white; */
+    position: relative;
+    left: 200px;
+    top: 170px;
+    box-shadow: 0px 0px 5px red;
+    border-radius: 20px;
+}
+#tech{
+    font-size: 30px;
+    margin-left: 130px;
+    color: orangered;
+    width: fit-content;
+    box-shadow: 0px 0px 5px;
+    
+}
+#firstdiv{
+    position: relative;
+    left: 50px;
+    top: 50px;
+    width: 650px;
+    height: 400px;
+    /* border: 2px solid red; */
+    font-size: 20px;
+    
+}
+#firstdiv li{
+    list-style: none;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+input{
+    position: relative;
+    left: 100px;
+    width: 350px;
+}
+input[type="range"] {
+    appearance: none;
+    height: 5px;
+    background: lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: orangered;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@keyframes increaseSkill {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.section2 {
+    width: 500px;
+    height: 450px;
+    position: relative;
+    left: 700px;
+    bottom: 280px;
+    transform: translateX(50%);
+    box-shadow: 0px 0px 5px orange;
+    border-radius: 20px;
+    padding: 20px;
+    /* background-color: #f8f9fa; */
+}
+
+.section2 h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #ff8c00;
+    margin-bottom: 20px;
+   position: relative;
+   left: 30px;
+   top: 20px;
+}
+
+#secound_div ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    padding: 0;
+    justify-items: center; 
+}
+
+.circle {
+    width: 150px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    /* background-color: #ff8c00; */
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px;
+    margin-top: 30px;
+}
