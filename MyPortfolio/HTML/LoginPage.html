@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #121212; 
+            color: #ffffff; 
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+            width: 100%;
+            max-width: 350px; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffff0a; 
+        }
+
+        input[type="text"],input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333; 
+            border-radius: 5px;
+            background-color: #292929; 
+            color: #ffffff;
+        }
+
+        input[type="submit"] {
+            background-color: #ff8000; 
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; 
+        }
+
+        form input {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter Username" id="username" autocomplete="off"><br>
+        <input type="password" placeholder="Enter Password" id="password"><br>
+        <input type="submit" value="Login" id="login">
+    </form>
+
+    <script>
+        let login = document.getElementById("login");
+        login.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let u1 = localStorage.getItem("uname");
+            let p1 = localStorage.getItem("pass");
+
+            if (username === u1 && password === p1) {
+                window.location.href = "./MyPortfolio.html"; 
+            } else {
+                alert("Invalid Credentials...!");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+       
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+        }
+        input[type="text"],input[type="email"],input[type="password"],input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #292929;
+            color: #ffffff;
+        }
+
+       
+        input[type="radio"] {
+            margin: 0 10px 0 0;
+        }
+
+        label {
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        
+        input[type="submit"] {
+            background-color: #f95604;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .radio-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Registration</h1>
+        <input type="text" placeholder="Enter Name" id="uname" autocomplete="off" required><br>
+        <input type="email" placeholder="Enter Email" autocomplete="off" required id="email"><br>
+        <input type="password" placeholder="Enter Password" id="pass" required><br>
+        <input type="number" placeholder="Enter Phone Number" id="num" required><br>
+        
+        <div class="radio-group">
+            <label for="">Gender</label><br>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+        </div>
+        
+        <input type="submit" value="Register" id="register">
+    </form>
+
+    <script>
+        let register = document.getElementById("register")
+        register.addEventListener('click', (event) => {
+            event.preventDefault(); 
+
+            let uname = document.getElementById("uname").value;
+            let pass = document.getElementById("pass").value;
+            
+
+            if (uname !== "" && pass !== "") {
+                localStorage.setItem("uname", uname);
+                localStorage.setItem("pass", pass);
+                alert("Registration Successful!");
+                window.location.href = "./LoginPage.html"; 
+            } else {
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script>
+</body>
+</html>
